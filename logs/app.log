@@ -1,53 +1,6 @@
-2022-11-24 14:04:30,711 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on CPP00200726B with PID 21356 (Q:\nd035-c4-Security-and-DevOps-master\starter_code\target\classes started by QuocLV1 in Q:\nd035-c4-Security-and-DevOps-master)
-2022-11-24 14:04:30,716 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
-2022-11-24 14:04:34,071 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 3.58 seconds (JVM running for 4.548)
-2022-11-24 14:04:56,207 INFO c.e.d.c.UserController [http-nio-8080-exec-1] User name(QuocDD) was successfully created
-2022-12-03 18:33:03,302 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on DESKTOP-8T9OEIN with PID 3616 (C:\Users\PC\Downloads\nd035-c4-Security-and-DevOps-master\starter_code\target\classes started by PC in C:\Users\PC\Downloads\nd035-c4-Security-and-DevOps-master)
-2022-12-03 18:33:03,423 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
-2022-12-03 18:33:16,569 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on DESKTOP-8T9OEIN with PID 6836 (C:\Users\PC\Downloads\nd035-c4-Security-and-DevOps-master\starter_code\target\classes started by PC in C:\Users\PC\Downloads\nd035-c4-Security-and-DevOps-master)
-2022-12-03 18:33:16,619 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
-2022-12-03 18:33:35,983 ERROR o.a.c.u.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-8080]]
-org.apache.catalina.LifecycleException: Protocol handler start failed
-	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:226) [tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at com.example.demo.SareetaApplication.main(SareetaApplication.java:14) [classes/:?]
-Caused by: java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
-	at sun.nio.ch.Net.bind(Net.java:459) ~[?:?]
-	at sun.nio.ch.Net.bind(Net.java:448) ~[?:?]
-	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227) ~[?:?]
-	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80) ~[?:?]
-	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:239) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1116) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1202) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
-	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005) ~[tomcat-embed-core-9.0.19.jar:9.0.19]
-	... 14 more
-2022-12-03 18:33:36,277 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 21.132 seconds (JVM running for 26.921)
-2022-12-03 18:33:36,353 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
-
-Action:
-
-Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
-
+2022-12-03 18:56:08,239 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on DESKTOP-8T9OEIN with PID 9492 (E:\nd035-c4-Security-and-DevOps\starter_code\target\classes started by PC in E:\nd035-c4-Security-and-DevOps)
+2022-12-03 18:56:08,257 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2022-12-03 18:56:23,032 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 15.631 seconds (JVM running for 18.381)
+2022-12-03 18:57:50,367 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on DESKTOP-8T9OEIN with PID 7964 (E:\nd035-c4-Security-and-DevOps\starter_code\target\classes started by PC in E:\nd035-c4-Security-and-DevOps)
+2022-12-03 18:57:50,382 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2022-12-03 18:58:02,867 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 13.468 seconds (JVM running for 16.297)

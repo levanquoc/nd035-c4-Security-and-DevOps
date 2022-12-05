@@ -9,7 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.http.HttpStatus;;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -23,86 +24,86 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class UserControllerTest {
 
-	private UserController userController;
+    private UserController userController;
 
-	private UserRepository userRepository = mock(UserRepository.class);
+    private UserRepository userRepository = mock(UserRepository.class);
 
-	private CartRepository cartRepository = mock(CartRepository.class);
+    private CartRepository cartRepository = mock(CartRepository.class);
 
-	private BCryptPasswordEncoder encoder = mock(BCryptPasswordEncoder.class);
+    private BCryptPasswordEncoder encoder = mock(BCryptPasswordEncoder.class);
 
-	@Before
-	public void setUp(){
-		userController = new UserController();
-		TestUtils.injectObjects(userController, "userRepository", userRepository);
-		TestUtils.injectObjects(userController, "cartRepository", cartRepository);
-		TestUtils.injectObjects(userController, "bCryptPasswordEncoder", encoder);
-	}
+    @Before
+    public void setUp(){
+        userController = new UserController();
+        TestUtils.injectObjects(userController, "userRepository", userRepository);
+        TestUtils.injectObjects(userController, "cartRepository", cartRepository);
+        TestUtils.injectObjects(userController, "bCryptPasswordEncoder", encoder);
+    }
 
-	@Test
-	public void verifyCreateUser() throws Exception{
-		when(encoder.encode("testPassword")).thenReturn("thisIsPasswordHashed");
-		CreateUserRequest r = new CreateUserRequest();
-		r.setUsername("test");
-		r.setPassword("testPassword");
-		r.setConfirmPassword("testPassword");
+    @Test
+    public void verifyCreateUser() throws Exception{
+        when(encoder.encode("testPassword")).thenReturn("thisIsHashed");
+        CreateUserRequest r = new CreateUserRequest();
+        r.setUsername("test");
+        r.setPassword("testPassword");
+        r.setConfirmPassword("testPassword");
 
-		ResponseEntity<User> response = userController.createUser(r);
+        ResponseEntity<User> response = userController.createUser(r);
 
-		assertNotNull(response);
-		assertEquals(200, response.getStatusCodeValue());
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
 
-		User user = response.getBody();
-		assertNotNull(user);
-		assertEquals(0, user.getId());
-		assertEquals("test", user.getUsername());
-		assertEquals("thisIsPasswordHashed", user.getPassword());
-	}
+        User u = response.getBody();
+        assertNotNull(u);
+        assertEquals(0, u.getId());
+        assertEquals("test", u.getUsername());
+        assertEquals("thisIsHashed", u.getPassword());
+    }
 
-	@Test
-	public void verifyFindById() throws Exception {
-		when(encoder.encode("testPassword")).thenReturn("thisIsPasswordHashed");
-		CreateUserRequest r = new CreateUserRequest();
-		r.setUsername("test");
-		r.setPassword("testPassword");
-		r.setConfirmPassword("testPassword");
+    @Test
+    public void verifyFindById() throws Exception {
+        when(encoder.encode("testPassword")).thenReturn("thisIsHashed");
+        CreateUserRequest r = new CreateUserRequest();
+        r.setUsername("test");
+        r.setPassword("testPassword");
+        r.setConfirmPassword("testPassword");
 
-		ResponseEntity<User> response = userController.createUser(r);
+        ResponseEntity<User> response = userController.createUser(r);
 
-		assertNotNull(response);
-		assertEquals(200, response.getStatusCodeValue());
-		User u = response.getBody();
-		assertNotNull(u);
-		assertEquals(0, u.getId());
-		assertEquals("test", u.getUsername());
-		assertEquals("thisIsPasswordHashed", u.getPassword());
+        assertNotNull(response);
+        assertEquals(200, response.getStatusCodeValue());
+        User u = response.getBody();
+        assertNotNull(u);
+        assertEquals(0, u.getId());
+        assertEquals("test", u.getUsername());
+        assertEquals("thisIsHashed", u.getPassword());
 
-		when(userRepository.findById(u.getId())).thenReturn(Optional.of(u));
-		ResponseEntity<User> response2 = userController.findById(u.getId());
-		assertEquals(HttpStatus.OK, response2.getStatusCode());
-	}
+        when(userRepository.findById(u.getId())).thenReturn(Optional.of(u));
+        ResponseEntity<User> response2 = userController.findById(u.getId());
+        assertEquals(HttpStatus.OK, response2.getStatusCode());
+    }
 
-	@Test
-	public void verifyFindByUsername() throws Exception {
-		when(encoder.encode("testPassword")).thenReturn("thisIsPasswordHashed");
-		CreateUserRequest r = new CreateUserRequest();
-		r.setUsername("test");
-		r.setPassword("testPassword");
-		r.setConfirmPassword("testPassword");
+    @Test
+    public void verifyFindByUsername() throws Exception {
+        when(encoder.encode("testPassword")).thenReturn("thisIsHashed");
+        CreateUserRequest r = new CreateUserRequest();
+        r.setUsername("test");
+        r.setPassword("testPassword");
+        r.setConfirmPassword("testPassword");
 
-		ResponseEntity<User> response = userController.createUser(r);
+        ResponseEntity<User> response = userController.createUser(r);
 
-		assertNotNull(response);
-		assertEquals(HttpStatus.OK, response.getStatusCode());
-		User u = response.getBody();
-		assertNotNull(u);
-		assertEquals(0, u.getId());
-		assertEquals("test", u.getUsername());
-		assertEquals("thisIsPasswordHashed", u.getPassword());
+        assertNotNull(response);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        User u = response.getBody();
+        assertNotNull(u);
+        assertEquals(0, u.getId());
+        assertEquals("test", u.getUsername());
+        assertEquals("thisIsHashed", u.getPassword());
 
-		when(userRepository.findByUsername(u.getUsername())).thenReturn(u);
-		ResponseEntity<User> response2 = userController.findByUserName(u.getUsername());
-		User userFound = response2.getBody();
-		assertEquals(HttpStatus.OK, response2.getStatusCode());
-	}
+        when(userRepository.findByUsername(u.getUsername())).thenReturn(u);
+        ResponseEntity<User> response2 = userController.findByUserName(u.getUsername());
+        User userFound = response2.getBody();
+        assertEquals(HttpStatus.OK, response2.getStatusCode());
+    }
 }

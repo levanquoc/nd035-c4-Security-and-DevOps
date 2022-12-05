@@ -4,3 +4,6 @@
 2022-12-03 18:57:50,367 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on DESKTOP-8T9OEIN with PID 7964 (E:\nd035-c4-Security-and-DevOps\starter_code\target\classes started by PC in E:\nd035-c4-Security-and-DevOps)
 2022-12-03 18:57:50,382 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
 2022-12-03 18:58:02,867 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 13.468 seconds (JVM running for 16.297)
+2022-12-04 07:03:41,047 INFO c.e.d.SareetaApplication [main] Starting SareetaApplication on DESKTOP-8T9OEIN with PID 1436 (E:\nd035-c4-Security-and-DevOps\starter_code\target\classes started by PC in E:\nd035-c4-Security-and-DevOps)
+2022-12-04 07:03:41,273 INFO c.e.d.SareetaApplication [main] No active profile set, falling back to default profiles: default
+2022-12-04 07:04:19,983 INFO c.e.d.SareetaApplication [main] Started SareetaApplication in 41.885 seconds (JVM running for 55.476)
